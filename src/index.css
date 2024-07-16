@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body  {
+
+    background-color: #333;
+    padding: 20px;
+    margin: 0;
+    color: white;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.center-vertical {
+  display: flex;
+  align-items: center;
+ flex-direction: column;
+}
+
+ul{
+  padding: 0px;
+  list-style-type: none;
+}
+
+.center-horizontal{
+  display: flex;
+  align-items: center;
+}
