@@ -1,9 +1,16 @@
 import styles from './PricingCard.module.css';
+import Button from '../button/Button';
 
 
-const PricingCard = ({label, price, duration="", image, imageAlt}) => {
+const PricingCard = ({label, price, duration="", image, imageAlt, benefits}) => {
+    const themeClasses = {
+        "Start-Up": styles.card__startup,
+        "Pro": styles.card__pro,
+        "Enterprise": styles.card__enterprise
+    }
+    const themeClass = themeClasses[label]
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${themeClass}`}>
         <div className={`${styles.card__wrapper} center-vertical`}>
             <span className={styles.card__label}> { label } </span>
             <div className={styles.card__img}>
@@ -15,16 +22,15 @@ const PricingCard = ({label, price, duration="", image, imageAlt}) => {
             </div>
             <span className={styles.card__benefitsLabel}>Everything in Free, Plus</span>
             <ul className={styles.card__benefits}>
-                <li className={`${styles.card__benefit} center-horizontal`}> <img src="/icons/check.png" alt="" className={styles.card__benefit__icon} />
-                Up to 10 Users 
-                    
+
+            {benefits.map((benefit, index) => (
+                <li key={index} className={`${styles.card__benefit} center-horizontal`}> <img src="/icons/check.png" alt="" className={styles.card__benefit__icon} />
+                {benefit}
                 </li>
-                <li className={`${styles.card__benefit} center-horizontal`}><img src="/icons/check.png" alt="" className={styles.card__benefit__icon} />
-                Email Support, Call Support</li>
-                <li className={`${styles.card__benefit} center-horizontal`}> <img src="/icons/check.png" alt="" className={styles.card__benefit__icon} />
-                1 Year Access</li>
+            ))}
+                
             </ul>
-            <button className={styles.card__button}>Choose</button>
+            <Button className={styles.card__button}>Choose</Button>
         </div>
     </div>
   )

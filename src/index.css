@@ -3,8 +3,6 @@
 }
 
 body  {
-
-    background-color: #333;
     padding: 20px;
     margin: 0;
     color: white;
@@ -32,4 +30,9 @@ ul{
 .center-horizontal{
   display: flex;
   align-items: center;
+}
+.container{
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
 }
