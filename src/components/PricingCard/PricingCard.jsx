@@ -30,7 +30,9 @@ const PricingCard = ({label, price, duration="", image, imageAlt, benefits}) => 
             ))}
                 
             </ul>
-            <Button className={styles.card__button}>Choose</Button>
+            <Button whenButtonIsClicked={()=>{
+                alert(`You chose ${benefits}`);
+            }} className={styles.card__button}>Choose</Button>
         </div>
     </div>
   )
